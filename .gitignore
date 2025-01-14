@@ -1,0 +1,3 @@
+
+*.pyc
+/alien_invasion/__pycache__
