@@ -69,6 +69,8 @@ class AlienInvasion:
         """Checks for mouse click on the play button"""
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
         if button_clicked and not self.game_active:
+            #reset the dynamic settings
+            self.settings.initialize_dynamic_settings()
             #reset the game stats
             self.stats.reset_stats()
             self.game_active = True
@@ -122,6 +124,7 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _create_fleet(self):
         """Creates the fleet"""
