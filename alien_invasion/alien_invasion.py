@@ -77,6 +77,7 @@ class AlienInvasion:
             #reset the game stats
             self.stats.reset_stats()
             self.scoreboard.prep_score()
+            self.scoreboard.prep_level()
             self.game_active = True
             #get rid of remaining aliens and bullets
             self.aliens.empty()
@@ -132,7 +133,9 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
-            self.settings.increase_speed()
+            self.settings.increase_speed()  
+            self.stats.level += 1
+            self.scoreboard.prep_level()
 
     def _create_fleet(self):
         """Creates the fleet"""
