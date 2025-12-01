@@ -2,3 +2,4 @@
 *.pyc
 /alien_invasion/__pycache__
 venv/
+*.DS_Store
